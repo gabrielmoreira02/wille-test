@@ -151,8 +151,8 @@ END $$;
 COMMIT;
 
 -- Verification
-\echo ''
-\echo '📊 Final counts:'
+\\echo ''
+\\echo '📊 Final counts:'
 SELECT 'equipment_groups' as table_name, COUNT(*) FROM equipment_groups
 UNION ALL SELECT 'equipment', COUNT(*) FROM equipment
 UNION ALL SELECT 'tankbuch', COUNT(*) FROM tankbuch
@@ -160,6 +160,6 @@ UNION ALL SELECT 'betriebsstoffe', COUNT(*) FROM betriebsstoffe
 UNION ALL SELECT 'maschinenkosten_arbeitszeit', COUNT(*) FROM maschinenkosten_arbeitszeit
 UNION ALL SELECT 'maschinenkosten_rechnungen', COUNT(*) FROM maschinenkosten_rechnungen;
 
-\echo ''
-\echo '📅 Date distribution (tankbuch):'
+\\echo ''
+\\echo '📅 Date distribution (tankbuch):'
 SELECT date::date, COUNT(*) as records FROM tankbuch GROUP BY date::date ORDER BY date DESC LIMIT 10;
